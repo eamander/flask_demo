@@ -3,6 +3,7 @@ from __future__ import (absolute_import, division, print_function)
 import numpy as np
 import pandas as pd
 import requests
+import os
 
 from bokeh.plotting import figure
 # from bokeh.layouts import layout, widgetbox
@@ -370,4 +371,5 @@ def create_hover_tool():
 
 
 if __name__ == '__main__':
-    app.run(port=33507)
+    port = int(os.environ.get("PORT", 33507))
+    app.run(host='0.0.0.0.', port=33507)
