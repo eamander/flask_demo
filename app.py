@@ -268,11 +268,12 @@ def update(p):
 
 def reload_ticker_data(p):
     global ticker_frame
+    quandl_api_key = os.environ.get("QUANDL_KEY")
     url_1 = (r"https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?ticker="
-             + ticker_1.value + "&api_key=Ag7zcnbbYyMz-cTAFdR2"
+             + ticker_1.value + "&api_key=" + quandl_api_key
              )
     url_2 = (r"https://www.quandl.com/api/v3/datatables/WIKI/PRICES.json?ticker="
-             + ticker_2.value + "&api_key=Ag7zcnbbYyMz-cTAFdR2"
+             + ticker_2.value + "&api_key=" + quandl_api_key
              )
     resp_1 = requests.get(url_1)
     resp_2 = requests.get(url_2)
